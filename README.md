@@ -44,18 +44,18 @@ Only the modified files have been included in this repository. In
 
   <p>9.  You can test out all of these changes in android studio as well.
 When you first flash and boot, you could be stuck in boot loop. It is because of an SELinux error.  SELinux defines permissions for system-level facilities, and we haven't told the Android system that our service has permission to spin up.  To fix this,
-    • go to device/google/crosshatch-sepolicy/private (or whichever build flavor you are
-      running, e.g. barbet-sepolicy) and find two files: service.te and service_contexts.
-    • If you are using a barbet device, these devices make use of the redbull sepolicy and the redbull kernel. The way you can verify this-
+    <p>• go to device/google/crosshatch-sepolicy/private (or whichever build flavor you are
+      running, e.g. barbet-sepolicy) and find two files: service.te and service_contexts. </p>
+    <p>• If you are using a barbet device, these devices make use of the redbull sepolicy and the redbull kernel. The way you can verify this-
       cd device/google/barbet
 	grep sepolicy -r .
 	grep include -r.
 	grep ^include -r.
-	After the last command, we are able to see that device-barbet.mk includes 	device/google/redbull/device-common.mk
-    • Inside service.te, define a new SELinux policy service type like so:
+	After the last command, we are able to see that device-barbet.mk includes 	device/google/redbull/device-common.mk </p>
+    <p>• Inside service.te, define a new SELinux policy service type like so:
       type sigma_service, app_api_service, system_server_service, service_manager_type;
       and inside service_contexts, define the instance of your service like so:
-      sigma  			u:object_r:sigma_service:s0
-    • Rebuild and you should be able to boot.</p>
-
+      sigma  			u:object_r:sigma_service:s0 </p>
+    <p>• Rebuild and you should be able to boot.</p>
+</p>
 
