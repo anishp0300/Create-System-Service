@@ -1,0 +1,2 @@
+type qchook_service,              service_manager_type;
+type sigma_service, app_api_service, system_server_service, service_manager_type;
