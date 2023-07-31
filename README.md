@@ -1,6 +1,6 @@
 <h1 align="center"> Creating a System Service </h1>
 
-<p> This is an AOSP example which demonstrates added a new System Service to your AOSP build </p>
+<p> This is an AOSP example which demonstrates adding a new System Service to your AOSP build </p>
 <p> This system service for now, returns null values. You can modify the code to make it return something else. </p>
 
 - Phone- **Pixel 5a(5G)**
@@ -23,7 +23,7 @@ Only the modified files have been included in this repository. In
     <p>3. Add a new String identifier entry in Context.java located under-
        frameworks/ base/ core/ java/ android/ content/ Context.java </p>
     <p>4. Run the ‘m update-api’ command followed by ‘m -j20’. You should be able to compile without any errors. </p>
-    <p>5. Write two functions, String read(int maxLength) and int write(String value) in IsigmaService.aidl. You will have to create this file and then place it under-
+    <p>5. Write two functions, in IsigmaService.aidl. You will have to create this file and then place it under-
        frameworks/ base/ media/ java/ android/ media/ 
        Refer to IaudioService.aidl under the same file path for the code structure. </p>
     <p>6. Create a new Java class and name it SigmaService.java and save it under-
