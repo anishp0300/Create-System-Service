@@ -42,7 +42,7 @@ Only the modified files have been included in this repository. In
 
 **TIP- Once you make the changes and then run m update-api, you are most likely to encounter a few errors. The most helpful trick to debugging is, debug errors one by one and try to analyze the codes to check for what went wrong. Most of the times the errors exists because of failing to import something or failing to create a constructor.
 
-  9.  You can test out all of these changes in android studio as well.
+  <p>9.  You can test out all of these changes in android studio as well.
 When you first flash and boot, you could be stuck in boot loop. It is because of an SELinux error.  SELinux defines permissions for system-level facilities, and we haven't told the Android system that our service has permission to spin up.  To fix this,
     • go to device/google/crosshatch-sepolicy/private (or whichever build flavor you are
       running, e.g. barbet-sepolicy) and find two files: service.te and service_contexts.
@@ -56,6 +56,6 @@ When you first flash and boot, you could be stuck in boot loop. It is because of
       type sigma_service, app_api_service, system_server_service, service_manager_type;
       and inside service_contexts, define the instance of your service like so:
       sigma  			u:object_r:sigma_service:s0
-    • Rebuild and you should be able to boot.
+    • Rebuild and you should be able to boot.</p>
 
 
